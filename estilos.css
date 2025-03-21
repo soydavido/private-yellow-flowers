@@ -1,0 +1,59 @@
+body {
+    background-color: black;
+    overflow: hidden; /* Evita la barra de scroll */
+    margin: 0;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif; /* Nueva fuente */
+    color: white;
+}
+
+.contenedor-frases {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el contenedor perfectamente */
+    text-align: center; /* Centra el texto horizontalmente */
+    color: white; /* Asegura que el texto sea visible sobre el fondo negro */
+    font-family: 'Poppins', sans-serif; /* Aplica la nueva fuente */
+}
+
+.contenedor-frases h1 {
+    font-size: 2.5em; /* Tamaño más pequeño para el nombre */
+    margin: 0.4em 0; /* Espaciado entre el nombre y las frases */
+    font-weight: 600; /* Hace que el nombre sea más destacado */
+}
+
+.contenedor-frases h2 {
+    font-size: 1.2em; /* Tamaño más pequeño para las frases */
+    margin: 0.2em 0; /* Espaciado entre las frases */
+    font-weight: 300; /* Hace que las frases sean más ligeras */
+}
+
+.flor {
+    position: absolute;
+    animation: caer 5s linear infinite; /* Animación */
+    width: 48px; /* Ancho fijo */
+    height: 48px; /* Alto fijo */
+    top: -50px; /* Asegura que las flores comiencen fuera de la pantalla */
+    z-index: -1;
+}
+
+@keyframes caer {
+    0% {
+        transform: translateY(-100vh) rotate(0deg); /* Comienza fuera de la pantalla */
+        opacity: 0;
+    }
+    20% {
+        opacity: 1; /* Las flores se hacen visibles */
+    }
+    80% {
+        opacity: 1; /* Mantiene la visibilidad */
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg); /* Termina fuera de la pantalla */
+        opacity: 0;
+    }
+}
